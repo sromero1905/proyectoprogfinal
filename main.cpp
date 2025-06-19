@@ -507,7 +507,7 @@ while (true) {
 
 
 void pausar() {
-    cout << "\nPresione Enter para continuar...";
+    cout << "\nPresione...";
     cin.ignore();
     cin.get();
 }
