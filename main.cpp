@@ -20,7 +20,7 @@ void menuListados();
 void menuInformes();
 void pausar();
 void limpiarPantalla();
- void menuVehiculo ();
+void menuVehiculo ();
 
 // Instancias globales de archivos
 ArchivoVehiculo ArchivoVehiculo;
@@ -34,7 +34,7 @@ int main() {
     cout << "    SISTEMA DE GESTION DE TALLER       " << endl;
     cout << "          MECANICO - V1.0              " << endl;
     cout << "========================================" << endl;
-system ("pause");
+    system ("pause");
     menuPrincipal();
 
     cout << "\nGracias por usar el Sistema de Gestion de Taller!" << endl;
@@ -309,55 +309,55 @@ void menuFacturas() {
                 break;
             }
           case 4: {
-                    cout << "\n=== GENERAR FACTURA DESDE REPARACION ===" << endl;
-                    int idReparacion;
-                    cout << "Ingrese ID de la reparacion: ";
-                    cin >> idReparacion;
+                        cout << "\n=== GENERAR FACTURA DESDE REPARACION ===" << endl;
+                        int idReparacion;
+                        cout << "Ingrese ID de la reparacion: ";
+                        cin >> idReparacion;
 
-                    int pos = archivoReparaciones.buscarReparacion(idReparacion);
-                    if (pos != -1) {
-                        Reparacion rep = archivoReparaciones.leerRegistro(pos);
+                        int pos = archivoReparaciones.buscarReparacion(idReparacion);
+                        if (pos != -1) {
+                            Reparacion rep = archivoReparaciones.leerRegistro(pos);
 
-                        Factura factura;
+                            Factura factura;
 
-                        cout << "Ingrese numero de factura: ";
-                        cin >> factura.NFactura;
+                            cout << "Ingrese numero de factura: ";
+                            cin >> factura.NFactura;
 
-                        factura.NReparacion = rep.getIDReparacion();
-                        factura.Importe = rep.getImporte();
-                        factura.FechaEntrega = rep.getFechaEntrega();
-                        strcpy(factura.NPatente, rep.getPatente());
-                        factura.IDCliente = rep.getIDCliente();
-                        factura.ImporteTotal = rep.getImporte();
+                            factura.NReparacion = rep.getIDReparacion();
+                            factura.Importe = rep.getImporte();
+                            factura.FechaEntrega = rep.getFechaEntrega();
+                            strcpy(factura.NPatente, rep.getPatente());
+                            factura.IDCliente = rep.getIDCliente();
+                            factura.ImporteTotal = rep.getImporte();
 
-                        // Guarda en archivo
-                        FILE* archivo = fopen("facturas.dat", "ab");
-                        if (archivo != NULL) {
-                            fwrite(&factura, sizeof(Factura), 1, archivo);
-                            fclose(archivo);
-                            cout << "\nFactura guardada exitosamente!" << endl;
+                            // Guarda en archivo
+                            FILE* archivo = fopen("facturas.dat", "ab");
+                            if (archivo != NULL) {
+                                fwrite(&factura, sizeof(Factura), 1, archivo);
+                                fclose(archivo);
+                                cout << "\nFactura guardada exitosamente!" << endl;
+                            } else {
+                                cout << "\nError al guardar la factura!" << endl;
+                            }
+
+                            cout << "\n=== FACTURA GENERADA EXITOSAMENTE ===" << endl;
+                            cout << "NUMERO DE FACTURA: " << factura.NFactura << endl;
+                            cout << "NUMERO DE REPARACION: " << factura.NReparacion << endl;
+                            cout << "IMPORTE: $" << factura.Importe << endl;
+                            cout << "FECHA DE ENTREGA: ";
+                            factura.FechaEntrega.mostrarFecha();
+                            cout << endl;
+                            cout << "PATENTE: " << factura.NPatente << endl;
+                            cout << "ID CLIENTE: " << factura.IDCliente << endl;
+                            cout << "IMPORTE TOTAL: $" << factura.ImporteTotal << endl;
+
                         } else {
-                            cout << "\nError al guardar la factura!" << endl;
+                            cout << "Reparacion no encontrada." << endl;
                         }
-
-                        cout << "\n=== FACTURA GENERADA EXITOSAMENTE ===" << endl;
-                        cout << "NUMERO DE FACTURA: " << factura.NFactura << endl;
-                        cout << "NUMERO DE REPARACION: " << factura.NReparacion << endl;
-                        cout << "IMPORTE: $" << factura.Importe << endl;
-                        cout << "FECHA DE ENTREGA: ";
-                        factura.FechaEntrega.mostrarFecha();
-                        cout << endl;
-                        cout << "PATENTE: " << factura.NPatente << endl;
-                        cout << "ID CLIENTE: " << factura.IDCliente << endl;
-                        cout << "IMPORTE TOTAL: $" << factura.ImporteTotal << endl;
-
-                    } else {
-                        cout << "Reparacion no encontrada." << endl;
+                        pausar();
+                        break;
                     }
-                    pausar();
-                    break;
-                }
-                            case 0:
+                                case 0:
                 cout << "Volviendo al menu principal..." << endl;
                 break;
             default:
@@ -433,22 +433,23 @@ void menuEmpleado () {
 }
 
 void menuVehiculo () {
-int opcion;
-char patente [10];
-while (true) {
-            system("cls");
- cout << "\n=== MENU VEHICULOS===" << endl;
+    int opcion;
+    char patente [10];
+    while (true) {
+        system("cls");
+        cout << "\n=== MENU VEHICULOS===" << endl;
         cout << "1. Agregar Vehiculos" << endl;
-        cout << "2. Eliminar Vehiculo" << endl;
-        cout << "3. Modificar Vehiculo" << endl;
-        cout << "4. Listar Vehiculos" << endl;
+        cout << "2. Listar Vehiculos" << endl;
+        cout << "3. Buscar Vehiculo por ID de Cliente" << endl;
+        cout << "4. Modificar Vehiculo" << endl;
+        cout << "5. Eliminar Vehiculo" << endl;
         cout << "0. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
         switch (opcion) {
-            case 1:
+            case 1: {
                 cout << "\n=== CARGAR VEHICULO ===" << endl;
-                  if (ArchivoVehiculo.AgregarRegistro() == 1) {
+                if (ArchivoVehiculo.AgregarRegistro() == 1) {
                     cout << "Vehiculo agregado correctamente. " << endl;
                 } else {
                     cout << "Error al agregar Vehiculo." << endl;
@@ -456,7 +457,51 @@ while (true) {
                 cout << endl;
                 system("pause");
                 break;
-                  case 2:
+            }
+            case 2: {
+                cout << "\n=== MOSTRAR VEHICULOS ===" << endl;
+                ArchivoVehiculo.listarRegistros ();
+                cout << endl;
+                system("pause");
+                break;
+            }
+        case 3: { // NUEVA OPCION: Buscar por ID de Cliente
+                int idBuscar;
+                cout << "Ingrese el ID de cliente a buscar: ";
+                cin >> idBuscar;
+                int pos = ArchivoVehiculo.BuscarVehiculoPorIDCliente(idBuscar);
+                if (pos >= 0) {
+                    Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
+                    v.mostrarVehiculo();
+                } else {
+                    cout << "No se encontro vehiculo con ese ID de cliente." << endl;
+                }
+                cout << endl;
+                system("pause");
+                break;
+            }
+           case 4: {
+                cout << "\n=== MODIFICAR VEHICULO ===" << endl;
+                cout << "Ingrese la Patente del vehiculo a modificar: ";
+                cin >> patente;
+                int pos = ArchivoVehiculo.BuscarVehiculo(patente);
+                if (pos == -1) {
+                    cout << "No se encontro el vehiculo o esta dado de baja." << endl;
+                } else {
+                    Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
+                    v.mostrarVehiculo();
+                    cout << "\nIngrese los nuevos datos (deje en blanco para no modificar):" << endl;
+                    v.ModificarVehiculo();
+                    if (ArchivoVehiculo.ModificarRegistro(v, pos) == 1) {
+                        cout << "Vehiculo modificado correctamente." << endl;
+                    } else {
+                        cout << "Error al modificar el vehiculo." << endl;
+                    }
+                }
+                system("pause");
+                break;
+            }
+            case 5: {
                 cout << "\n=== ELIMINAR VEHICULO ===" << endl;
                 cout << "Ingrese la patente del vehiculo a dar de baja: ";
                 cin >> patente;
@@ -467,45 +512,15 @@ while (true) {
                 }
                 system("pause");
                 break;
-                case 3: {
-    cout << "\n=== MODIFICAR VEHICULO ===" << endl;
-    cout << "Ingrese la Patente del vehiculo a modificar: ";
-    cin >> patente;
-    int pos = ArchivoVehiculo.BuscarVehiculo(patente);
-    if (pos == -1) {
-        cout << "No se encontro el vehiculo o esta dado de baja." << endl;
-    } else {
-        Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
-        v.mostrarVehiculo();
-        cout << "\nIngrese los nuevos datos (deje en blanco para no modificar):" << endl;
-        v.ModificarVehiculo();
-        if (ArchivoVehiculo.ModificarRegistro(v, pos) == 1) {
-            cout << "Vehiculo modificado correctamente." << endl;
-        } else {
-            cout << "Error al modificar el vehiculo." << endl;
-        }
-    }
-    system("pause");
-    break;
-                }
-                case 4:
-                cout << "\n=== MOSTRAR VEHICULOS ===" << endl;
-                ArchivoVehiculo.listarRegistros ();
-                cout << endl;
-                system("pause");
-                break;
-                 case 0:
+            }
+            case 0:
                 return;
             default:
                 cout << "Opcion invalida. Intente de nuevo." << endl;
                 system("pause");
+        }
+    }
 }
-
-}
-}
-
-
-
 void pausar() {
     cout << "\nPresione...";
     cin.ignore();

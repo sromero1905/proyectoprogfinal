@@ -19,8 +19,6 @@ int ArchivoVehiculo::AgregarRegistro() {
     fclose(archivo);
     return escribio;
 }
-
-
 //ABML: BAJA LOGICA
 bool ArchivoVehiculo::bajaVehiculo(const char* patenteBuscada) {
     FILE* archivo = fopen(nombreArchivo, "rb+");
@@ -114,3 +112,21 @@ Vehiculo ArchivoVehiculo::LeerRegistro(int pos) {
     return obj;
 }
 
+
+int ArchivoVehiculo::BuscarVehiculoPorIDCliente(int idCliente) {
+    Vehiculo obj;
+    FILE* p = fopen(nombreArchivo, "rb");
+    if (!p) return -1;
+
+    int pos = 0;
+    while (fread(&obj, tamRegistro, 1, p)) {
+        if (obj.getIDCliente() == idCliente && obj.getEstado()) { // Solo activos
+            fclose(p);
+            return pos;
+        }
+        pos++;
+    }
+
+    fclose(p);
+    return -1; // No encontrado
+}
