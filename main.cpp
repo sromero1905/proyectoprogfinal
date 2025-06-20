@@ -375,9 +375,9 @@ void menuEmpleado () {
 
         cout << "\n=== MENU EMPLEADO ===" << endl;
         cout << "1. Agregar Empleado" << endl;
-        cout << "2. Eliminar Empleado" << endl;
+        cout << "2. Listar Empleados" << endl;
         cout << "3. Modificar Empleado" << endl;
-        cout << "4. Listar Empleados" << endl;
+        cout << "4. Eliminar Empleados" << endl;
         cout << "0. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -396,14 +396,9 @@ void menuEmpleado () {
                 system("pause");
                 break;
             case 2:
-                cout << "\n=== ELIMINAR EMPLEADO ===" << endl;
-                cout << "Ingrese ID de empleado a dar de baja: ";
-                cin >> id;
-                if (ArchivoEmpleado.bajaEmpleado(id)) {
-                    cout << "Empleado dado de baja correctamente." << endl;
-                } else {
-                    cout << "No se encontro el empleado o ya esta dado de baja." << endl;
-                }
+                cout << "\n=== MOSTRAR EMPLEADOS ===" << endl;
+                ArchivoEmpleado.listarRegistros();
+                cout << endl;
                 system("pause");
                 break;
             case 3:
@@ -418,9 +413,14 @@ void menuEmpleado () {
                 system("pause");
                 break;
             case 4:
-                cout << "\n=== MOSTRAR EMPLEADOS ===" << endl;
-                ArchivoEmpleado.listarRegistros();
-                cout << endl;
+                cout << "\n=== ELIMINAR EMPLEADO ===" << endl;
+                cout << "Ingrese ID de empleado a dar de baja: ";
+                cin >> id;
+                if (ArchivoEmpleado.bajaEmpleado(id)) {
+                    cout << "Empleado dado de baja correctamente." << endl;
+                } else {
+                    cout << "No se encontro el empleado o ya esta dado de baja." << endl;
+                }
                 system("pause");
                 break;
             case 0:
