@@ -367,6 +367,7 @@ void menuFacturas() {
         }
     } while (opcion != 0);
 }
+
 void menuEmpleado () {
     int opcion, id;
 
@@ -378,6 +379,7 @@ void menuEmpleado () {
         cout << "2. Listar Empleados" << endl;
         cout << "3. Modificar Empleado" << endl;
         cout << "4. Eliminar Empleados" << endl;
+        cout << "5. Mostrar Empleado por ID"<< endl;
         cout << "0. Salir" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
@@ -421,6 +423,14 @@ void menuEmpleado () {
                 } else {
                     cout << "No se encontro el empleado o ya esta dado de baja." << endl;
                 }
+                system("pause");
+                break;
+            case 5:
+                cout << "\n=== BUSCAR EMPLEADO POR ID ===" << endl;
+                cout << "Ingrese el ID de empleado a buscar: ";
+                cin >> id;
+                ArchivoEmpleado.mostrarEmpleadoPorID(id);
+                cout << endl;
                 system("pause");
                 break;
             case 0:

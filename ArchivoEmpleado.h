@@ -33,6 +33,7 @@ public:
 
    int obtenerSiguienteId();
 
+   void mostrarEmpleadoPorID (int idEmpleado);
 };
 
 #endif // ARCHIVOEMPLEADO_H

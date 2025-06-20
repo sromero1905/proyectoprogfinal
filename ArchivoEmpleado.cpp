@@ -139,3 +139,13 @@ if (!p) return 1;
     return maxID + 1;
 }
 
+// BUSCAR  EMPLEADO POR ID
+void ArchivoEmpleado::mostrarEmpleadoPorID(int idEmpleado) {
+    int pos = buscarEmpleado(idEmpleado);
+    if (pos < 0) {
+        cout << "No se encontro un empleado con ese ID." << endl;
+        return;
+    }
+    Empleado obj = leerRegistro(pos);
+    obj.mostrarEmpleado();
+}
