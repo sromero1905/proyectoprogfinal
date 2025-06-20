@@ -387,12 +387,12 @@
 	"Persona.h"
 	<cstring>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivocliente.cpp
+1750454767 source:c:\users\santiago\desktop\proyectoprog2-main\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivocliente.h
+1750453775 c:\users\santiago\desktop\proyectoprog2-main\archivocliente.h
 	"Cliente.h"
 	<cstdio>
 
@@ -401,7 +401,7 @@
 
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\persona.h
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.cpp
+1750452224 source:c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -411,7 +411,7 @@
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\empleado.h
 	"Persona.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.h
+1750452224 c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.h
 	"Empleado.h"
 	<cstdio>
 	<cstring>
@@ -430,7 +430,7 @@
 
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\fecha.h
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.cpp
+1750452224 source:c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.cpp
 	<iostream>
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
@@ -439,11 +439,11 @@
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\vehiculo.h
 	"Fecha.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.h
+1750452224 c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.h
 	"Vehiculo.h"
 	<cstring>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\cliente.cpp
+1750454428 source:c:\users\santiago\desktop\proyectoprog2-main\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
@@ -481,7 +481,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\main.cpp
+1750453976 source:c:\users\santiago\desktop\proyectoprog2-main\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
@@ -629,5 +629,127 @@
 	"ArchivoEmpleado.h"
 	"Factura.h"
 	"Informes.h"
+	"ArchivoVehiculo.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivocliente.cpp
+	<iostream>
+	<cstring>
+	"ArchivoCliente.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivocliente.h
+	"Cliente.h"
+	<cstdio>
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.h
+	"Persona.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.h
+
+1750439304 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.h
+	"Persona.h"
+
+1750439304 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.h
+	"Empleado.h"
+	<cstdio>
+	<cstring>
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoreparacion.cpp
+	<iostream>
+	<cstring>
+	"ArchivoReparacion.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoreparacion.h
+	"Reparacion.h"
+	<cstdio>
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\reparacion.h
+	"Fecha.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\fecha.h
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivovehiculo.cpp
+	<iostream>
+	"Vehiculo.h"
+	"ArchivoVehiculo.h"
+	<cstring>
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\vehiculo.h
+	"Fecha.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivovehiculo.h
+	"Vehiculo.h"
+	<cstring>
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	"Factura.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.h
+	"Fecha.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\fecha.cpp
+	"Fecha.h"
+	<iostream>
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\informes.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<iomanip>
+	"Informes.h"
+
+1750438385 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\informes.h
+	"ArchivoReparacion.h"
+	"ArchivoCliente.h"
+	"Factura.h"
+	<cstdio>
+
+1750438612 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\main.cpp
+	<iostream>
+	<cstdlib>
+	"Cliente.h"
+	"ArchivoCliente.h"
+	"Reparacion.h"
+	"ArchivoReparacion.h"
+	"ArchivoEmpleado.h"
+	"Factura.h"
+	"Informes.h"
+	"ArchivoVehiculo.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.cpp
+	<cstring>
+	<iostream>
+	"Persona.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\reparacion.cpp
+	<iostream>
+	<cstring>
+	"Reparacion.h"
+
+1750438385 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\vehiculo.cpp
+	<iostream>
+	<cstring>
+	"Vehiculo.h"
 	"ArchivoVehiculo.h"
 
