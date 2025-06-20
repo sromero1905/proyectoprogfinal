@@ -18,6 +18,7 @@ public:
     void reparacionesPorEmpleado();
     void vehiculoMasReparado();
     void mostrarMenuInformes();
+    void reparacionesPorEstado();
 
 private:
     float calcularRecaudacionMes(int mes, int anio);

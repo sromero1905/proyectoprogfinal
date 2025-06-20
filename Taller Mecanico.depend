@@ -753,3 +753,125 @@
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
 
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\archivocliente.cpp
+	<iostream>
+	<cstring>
+	"ArchivoCliente.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\archivocliente.h
+	"Cliente.h"
+	<cstdio>
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\cliente.h
+	"Persona.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\persona.h
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\archivoempleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\empleado.h
+	"Persona.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\archivoempleado.h
+	"Empleado.h"
+	<cstdio>
+	<cstring>
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\archivoreparacion.cpp
+	<iostream>
+	<cstring>
+	"ArchivoReparacion.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\archivoreparacion.h
+	"Reparacion.h"
+	<cstdio>
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\reparacion.h
+	"Fecha.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\fecha.h
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\archivovehiculo.cpp
+	<iostream>
+	"Vehiculo.h"
+	"ArchivoVehiculo.h"
+	<cstring>
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\vehiculo.h
+	"Fecha.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\archivovehiculo.h
+	"Vehiculo.h"
+	<cstring>
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\cliente.cpp
+	<iostream>
+	<cstring>
+	"Cliente.h"
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\empleado.cpp
+	<iostream>
+	"Empleado.h"
+	"ArchivoEmpleado.h"
+	"Persona.h"
+	<cstring>
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\factura.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	"Factura.h"
+
+1750459575 c:\users\santiago\desktop\proyectoprogfinal\factura.h
+	"Fecha.h"
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\fecha.cpp
+	"Fecha.h"
+	<iostream>
+
+1750460676 source:c:\users\santiago\desktop\proyectoprogfinal\informes.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<iomanip>
+	"Informes.h"
+
+1750460131 c:\users\santiago\desktop\proyectoprogfinal\informes.h
+	"ArchivoReparacion.h"
+	"ArchivoCliente.h"
+	"Factura.h"
+	<cstdio>
+
+1750460830 source:c:\users\santiago\desktop\proyectoprogfinal\main.cpp
+	<iostream>
+	<cstdlib>
+	"Cliente.h"
+	"ArchivoCliente.h"
+	"Reparacion.h"
+	"ArchivoReparacion.h"
+	"ArchivoEmpleado.h"
+	"Factura.h"
+	"Informes.h"
+	"ArchivoVehiculo.h"
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\persona.cpp
+	<cstring>
+	<iostream>
+	"Persona.h"
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\reparacion.cpp
+	<iostream>
+	<cstring>
+	"Reparacion.h"
+
+1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\vehiculo.cpp
+	<iostream>
+	<cstring>
+	"Vehiculo.h"
+	"ArchivoVehiculo.h"
+

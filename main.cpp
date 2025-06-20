@@ -10,7 +10,6 @@
 #include "ArchivoVehiculo.h"
 using namespace std;
 
-// Prototipos de funciones
 void menuPrincipal();
 void menuEmpleado();
 void menuClientes();
@@ -21,12 +20,13 @@ void menuInformes();
 void pausar();
 void limpiarPantalla();
 void menuVehiculo ();
+void mostrarMenuInformes();
 
-// Instancias globales de archivos
 ArchivoVehiculo ArchivoVehiculo;
 ArchivoEmpleado ArchivoEmpleado;
 ArchivoCliente archivoClientes;
 ArchivoReparacion archivoReparaciones;
+Informes informes;
 
 int main() {
 
@@ -72,8 +72,7 @@ void menuPrincipal() {
                 menuEmpleado();
                 break;
             case 5: {
-                Informes informes;
-                informes.mostrarMenuInformes();
+               mostrarMenuInformes();
                 break;
             }
             break;
@@ -449,6 +448,8 @@ void menuEmpleado () {
 }
 
 void menuVehiculo () {
+
+
     int opcion;
     char patente [10];
     while (true) {
@@ -538,6 +539,41 @@ void menuVehiculo () {
         }
     }
 }
+
+ void mostrarMenuInformes(){
+     int opcion;
+    do {
+        cout << "\n===== INFORMES =====" << endl;
+        cout << "1. Recaudacion Mensual" << endl;
+        cout << "2. Recaudacion Anual" << endl;
+        cout << "3. Recaudacion por Cliente" << endl;
+        cout << "4. Reparaciones por Vehiculo" << endl;
+        cout << "5. Reparaciones por Empleado" << endl;
+        cout << "6. Vehiculo Mas Reparado" << endl;
+        cout << "7. Reparaciones por Estado" << endl;
+        cout << "Opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: informes.recaudacionMensual(); break;
+            case 2: informes.recaudacionAnual(); break;
+            case 3: informes.recaudacionPorCliente(); break;
+            case 4: informes.reparacionesPorVehiculo(); break;
+            case 5: informes.reparacionesPorEmpleado(); break;
+            case 6: informes.vehiculoMasReparado(); break;
+            case 7: informes.reparacionesPorEstado(); break;
+            case 0: break;
+            default: cout << "Opcion invalida." << endl;
+        }
+
+        if (opcion != 0) {
+            cout << "\nEnter para continuar...";
+            cin.ignore();
+            cin.get();
+        }
+
+    } while (opcion != 0);
+    }
 void pausar() {
     cout << "\nPresione enter para continuar...";
     cin.ignore();
