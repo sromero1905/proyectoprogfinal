@@ -440,7 +440,7 @@ void menuVehiculo () {
         cout << "\n=== MENU VEHICULOS===" << endl;
         cout << "1. Agregar Vehiculos" << endl;
         cout << "2. Listar Vehiculos" << endl;
-        cout << "3. Buscar Vehiculo por ID de Cliente" << endl;
+        cout << "3. Buscar Vehiculo por Patente" << endl;
         cout << "4. Modificar Vehiculo" << endl;
         cout << "5. Eliminar Vehiculo" << endl;
         cout << "0. Salir" << endl;
@@ -465,16 +465,17 @@ void menuVehiculo () {
                 system("pause");
                 break;
             }
-        case 3: { // NUEVA OPCION: Buscar por ID de Cliente
-                int idBuscar;
-                cout << "Ingrese el ID de cliente a buscar: ";
-                cin >> idBuscar;
-                int pos = ArchivoVehiculo.BuscarVehiculoPorIDCliente(idBuscar);
+        case 3: {
+                char PatenteBuscar[30];
+                cout << "Ingrese la patente para buscar el vehiculo: ";
+                cin.ignore();
+                cin.getline(PatenteBuscar, 30);
+                int pos = ArchivoVehiculo.BuscarVehiculoPorPatente(PatenteBuscar);
                 if (pos >= 0) {
                     Vehiculo v = ArchivoVehiculo.LeerRegistro(pos);
                     v.mostrarVehiculo();
                 } else {
-                    cout << "No se encontro vehiculo con ese ID de cliente." << endl;
+                    cout << "No se encontro vehiculo con la patente ingresada." << endl;
                 }
                 cout << endl;
                 system("pause");

@@ -113,14 +113,14 @@ Vehiculo ArchivoVehiculo::LeerRegistro(int pos) {
 }
 
 
-int ArchivoVehiculo::BuscarVehiculoPorIDCliente(int idCliente) {
+int ArchivoVehiculo::BuscarVehiculoPorPatente(const char* PatenteBuscar) {
     Vehiculo obj;
     FILE* p = fopen(nombreArchivo, "rb");
     if (!p) return -1;
 
     int pos = 0;
     while (fread(&obj, tamRegistro, 1, p)) {
-        if (obj.getIDCliente() == idCliente && obj.getEstado()) { // Solo activos
+        if (strcmp(obj.getPatente(), PatenteBuscar) == 0 && obj.getEstado()) { // Solo activos
             fclose(p);
             return pos;
         }

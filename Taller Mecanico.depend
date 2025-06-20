@@ -552,7 +552,7 @@
 
 1750355203 c:\users\axel batistuta\desktop\proyectoprogfinal\fecha.h
 
-1750431173 source:c:\users\axel batistuta\desktop\proyectoprogfinal\archivovehiculo.cpp
+1750457828 source:c:\users\axel batistuta\desktop\proyectoprogfinal\archivovehiculo.cpp
 	<iostream>
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
@@ -561,7 +561,7 @@
 1750355203 c:\users\axel batistuta\desktop\proyectoprogfinal\vehiculo.h
 	"Fecha.h"
 
-1750431173 c:\users\axel batistuta\desktop\proyectoprogfinal\archivovehiculo.h
+1750457482 c:\users\axel batistuta\desktop\proyectoprogfinal\archivovehiculo.h
 	"Vehiculo.h"
 	<cstring>
 
@@ -619,7 +619,7 @@
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
 
-1750431949 source:c:\users\axel batistuta\desktop\proyectoprogfinal\main.cpp
+1750457746 source:c:\users\axel batistuta\desktop\proyectoprogfinal\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
