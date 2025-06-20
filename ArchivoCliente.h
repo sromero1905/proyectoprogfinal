@@ -15,7 +15,7 @@ public:
     void MostrarCliente();
     void ModificarCliente();
     void EliminarCliente();
-    Cliente BuscarClientePorID(int id);
+    void MostrarClientePorID();
     bool ExisteCliente(int id);
     int ObtenerProximoID();
 };

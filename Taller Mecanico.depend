@@ -387,12 +387,12 @@
 	"Persona.h"
 	<cstring>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivocliente.cpp
+1750454767 source:c:\users\santiago\desktop\proyectoprog2-main\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivocliente.h
+1750453775 c:\users\santiago\desktop\proyectoprog2-main\archivocliente.h
 	"Cliente.h"
 	<cstdio>
 
@@ -401,7 +401,7 @@
 
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\persona.h
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.cpp
+1750452224 source:c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -411,7 +411,7 @@
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\empleado.h
 	"Persona.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.h
+1750452224 c:\users\santiago\desktop\proyectoprog2-main\archivoempleado.h
 	"Empleado.h"
 	<cstdio>
 	<cstring>
@@ -430,7 +430,7 @@
 
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\fecha.h
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.cpp
+1750452224 source:c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.cpp
 	<iostream>
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
@@ -439,11 +439,11 @@
 1750244991 c:\users\santiago\desktop\proyectoprog2-main\vehiculo.h
 	"Fecha.h"
 
-1750244991 c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.h
+1750452224 c:\users\santiago\desktop\proyectoprog2-main\archivovehiculo.h
 	"Vehiculo.h"
 	<cstring>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\cliente.cpp
+1750454428 source:c:\users\santiago\desktop\proyectoprog2-main\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
@@ -481,7 +481,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750244991 source:c:\users\santiago\desktop\proyectoprog2-main\main.cpp
+1750453976 source:c:\users\santiago\desktop\proyectoprog2-main\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"

@@ -11,9 +11,7 @@ ArchivoCliente::ArchivoCliente(const char* nombre) {
 
 int ArchivoCliente::ObtenerProximoID() {
     FILE* archivo = fopen(NombreArchivo, "rb");
-    if (archivo == nullptr) {
-        return 1; // Primer ID si no existe el archivo
-    }
+    if (!archivo) return 1;
 
     Cliente cliente;
     int maxID = 0;
@@ -30,51 +28,102 @@ int ArchivoCliente::ObtenerProximoID() {
 
 bool ArchivoCliente::GenerarNuevo() {
     FILE* archivo = fopen(NombreArchivo, "wb");
-    if (archivo == nullptr) {
-        cout << "Error: No se pudo crear el archivo " << NombreArchivo << endl;
+    if (!archivo) {
+        cout << "Error al crear archivo" << endl;
         return false;
     }
     fclose(archivo);
-    cout << "Archivo " << NombreArchivo << " creado exitosamente." << endl;
+    cout << "Archivo creado exitosamente" << endl;
     return true;
 }
 
 void ArchivoCliente::AgregarCliente() {
     Cliente cliente;
     cliente.cargarCliente();
-
-    // Asignar ID autoincremental
-    int nuevoID = ObtenerProximoID();
-    cliente.setIDCliente(nuevoID);
+    cliente.setIDCliente(ObtenerProximoID());
 
     FILE* archivo = fopen(NombreArchivo, "ab");
-    if (archivo == nullptr) {
-        cout << "Error: No se pudo abrir el archivo para escritura." << endl;
+    if (!archivo) {
+        cout << "Error al abrir archivo" << endl;
         return;
     }
 
-    int resultado = fwrite(&cliente, TamRegistro, 1, archivo);
-    fclose(archivo);
-
-    if (resultado == 1) {
-        cout << "Cliente agregado exitosamente! ID asignado: " << cliente.getIDCliente() << endl;
+    if (fwrite(&cliente, TamRegistro, 1, archivo) == 1) {
+        cout << "Cliente agregado! ID: " << cliente.getIDCliente() << endl;
     } else {
-        cout << "Error: No se pudo guardar el cliente." << endl;
+        cout << "Error al guardar cliente" << endl;
     }
+    fclose(archivo);
 }
 
-void ArchivoCliente::MostrarCliente() {
+void ArchivoCliente::MostrarClientePorID() {
     int id;
     cout << "Ingrese ID del cliente a mostrar: ";
     cin >> id;
 
-    Cliente cliente = BuscarClientePorID(id);
-    if (cliente.getIDCliente() == 0) {
-        cout << "Cliente no encontrado." << endl;
-    } else {
-        cliente.mostrarCliente();
+    FILE* archivo = fopen(NombreArchivo, "rb");
+    if (!archivo) {
+        cout << "Error al abrir archivo" << endl;
+        return;
     }
+
+    Cliente cliente;
+    bool encontrado = false;
+
+    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
+        if (cliente.getIDCliente() == id && cliente.getEstado()) {
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (encontrado) {
+        cout << "\n========================================" << endl;
+        cout << "           DATOS DEL CLIENTE" << endl;
+        cout << "========================================" << endl;
+        cliente.mostrarCliente();
+        cout << "========================================\n" << endl;
+    } else {
+        cout << "Cliente con ID " << id << " no encontrado o inactivo" << endl;
+    }
+
+    fclose(archivo);
 }
+
+void ArchivoCliente::MostrarCliente() {
+    FILE* archivo = fopen(NombreArchivo, "rb");
+    if (!archivo) {
+        cout << "Error al abrir archivo" << endl;
+        return;
+    }
+
+    Cliente cliente;
+    int contador = 0;
+
+    cout << "\n========================================" << endl;
+    cout << "           LISTA DE CLIENTES" << endl;
+    cout << "========================================" << endl;
+
+    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
+        if (cliente.getEstado()) {
+            contador++;
+            cout << "\nCliente #" << contador << ":" << endl;
+            cout << "----------------------------------------" << endl;
+            cliente.mostrarCliente();
+        }
+    }
+
+    cout << "\n========================================" << endl;
+    if (contador == 0) {
+        cout << "     No hay clientes registrados" << endl;
+    } else {
+        cout << "     Total de clientes: " << contador << endl;
+    }
+    cout << "========================================\n" << endl;
+
+    fclose(archivo);
+}
+
 
 void ArchivoCliente::ModificarCliente() {
     int id;
@@ -96,7 +145,7 @@ void ArchivoCliente::ModificarCliente() {
             encontrado = true;
             break;
         }
-        posicion = ftell(archivo);
+        posicion = ftell(archivo); // LÍNEA MOVIDA AQUÍ - DESPUÉS DEL IF
     }
 
     if (!encontrado) {
@@ -114,8 +163,8 @@ void ArchivoCliente::ModificarCliente() {
 
     if (confirma == 's' || confirma == 'S') {
         cliente.actualizarCliente();
+        fseek(archivo, posicion, SEEK_SET);
 
-        fseek(archivo, posicion - TamRegistro, SEEK_SET);
         int resultado = fwrite(&cliente, TamRegistro, 1, archivo);
 
         if (resultado == 1) {
@@ -130,34 +179,34 @@ void ArchivoCliente::ModificarCliente() {
 
 void ArchivoCliente::EliminarCliente() {
     int id;
-    cout << "Ingrese ID del cliente a eliminar: ";
+    cout << "ID del cliente a eliminar: ";
     cin >> id;
 
     FILE* archivo = fopen(NombreArchivo, "r+b");
-    if (archivo == nullptr) {
-        cout << "Error: No se pudo abrir el archivo." << endl;
+    if (!archivo) {
+        cout << "Error al abrir archivo" << endl;
         return;
     }
 
     Cliente cliente;
     bool encontrado = false;
-    long posicion = 0;
+    long pos = 0;
 
     while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
+        pos = ftell(archivo); // MOVER ESTA LÍNEA AQUÍ
         if (cliente.getIDCliente() == id && cliente.getEstado()) {
             encontrado = true;
             break;
         }
-        posicion = ftell(archivo);
     }
 
     if (!encontrado) {
-        cout << "Cliente no encontrado o ya inactivo." << endl;
+        cout << "Cliente no encontrado" << endl;
         fclose(archivo);
         return;
     }
 
-    cout << "Cliente encontrado:" << endl;
+    cout << "Cliente a eliminar:" << endl;
     cliente.mostrarCliente();
 
     char confirma;
@@ -165,45 +214,17 @@ void ArchivoCliente::EliminarCliente() {
     cin >> confirma;
 
     if (confirma == 's' || confirma == 'S') {
-        cliente.eliminarCliente(); // Marca como inactivo
+        cliente.eliminarCliente(); // Cambia estado a false
 
-        fseek(archivo, posicion - TamRegistro, SEEK_SET);
-        int resultado = fwrite(&cliente, TamRegistro, 1, archivo);
+        // POSICIONARSE CORRECTAMENTE EN EL ARCHIVO
+        fseek(archivo, pos - TamRegistro, SEEK_SET);
 
-        if (resultado == 1) {
-            cout << "Cliente eliminado exitosamente!" << endl;
+        if (fwrite(&cliente, TamRegistro, 1, archivo) == 1) {
+            cout << "Cliente eliminado exitosamente" << endl;
         } else {
-            cout << "Error: No se pudo eliminar el cliente." << endl;
+            cout << "Error al eliminar cliente" << endl;
         }
     }
 
     fclose(archivo);
 }
-
-Cliente ArchivoCliente::BuscarClientePorID(int id) {
-    Cliente cliente;
-    FILE* archivo = fopen(NombreArchivo, "rb");
-
-    if (archivo == nullptr) {
-        cout << "Error: No se pudo abrir el archivo." << endl;
-        return cliente; // Retorna cliente vacio (ID = 0)
-    }
-
-    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
-        if (cliente.getIDCliente() == id && cliente.getEstado()) {
-            fclose(archivo);
-            return cliente;
-        }
-    }
-
-    fclose(archivo);
-    // Si no se encontro, retornar cliente vacio
-    Cliente clienteVacio;
-    return clienteVacio;
-}
-
-bool ArchivoCliente::ExisteCliente(int id) {
-    Cliente cliente = BuscarClientePorID(id);
-    return cliente.getIDCliente() != 0;
-}
-

@@ -100,7 +100,8 @@ void menuClientes() {
         cout << "1. Agregar Cliente" << endl;
         cout << "2. Mostrar Cliente" << endl;
         cout << "3. Modificar Cliente" << endl;
-        cout << "4. Eliminar Cliente" << endl;
+        cout << "4. Mostrar Cliente por ID" << endl;
+        cout << "5. Eliminar Cliente" << endl;
         cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -123,6 +124,11 @@ void menuClientes() {
                 pausar();
                 break;
             case 4:
+                cout << "\n=== MOSTRAR CLIENTE POR ID ===" << endl;
+                archivoClientes.MostrarClientePorID();
+                pausar();
+                break;
+            case 5:
                 cout << "\n=== ELIMINAR CLIENTE ===" << endl;
                 archivoClientes.EliminarCliente();
                 pausar();
@@ -532,7 +538,7 @@ void menuVehiculo () {
     }
 }
 void pausar() {
-    cout << "\nPresione...";
+    cout << "\nPresione enter para continuar...";
     cin.ignore();
     cin.get();
 }
