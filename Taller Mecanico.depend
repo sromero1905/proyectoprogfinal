@@ -834,11 +834,10 @@
 	"Fecha.h"
 	<iostream>
 
-1750460676 source:c:\users\santiago\desktop\proyectoprogfinal\informes.cpp
+1750461224 source:c:\users\santiago\desktop\proyectoprogfinal\informes.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
-	<iomanip>
 	"Informes.h"
 
 1750460131 c:\users\santiago\desktop\proyectoprogfinal\informes.h
@@ -847,7 +846,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750460830 source:c:\users\santiago\desktop\proyectoprogfinal\main.cpp
+1750522210 source:c:\users\santiago\desktop\proyectoprogfinal\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
@@ -864,7 +863,7 @@
 	<iostream>
 	"Persona.h"
 
-1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\reparacion.cpp
+1750522502 source:c:\users\santiago\desktop\proyectoprogfinal\reparacion.cpp
 	<iostream>
 	<cstring>
 	"Reparacion.h"

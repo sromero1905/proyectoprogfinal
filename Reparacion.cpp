@@ -47,19 +47,6 @@ void Reparacion::cargarReparacion() {
     cout << "Ingrese importe: $";
     cin >> importe;
 
-    cout << "Estado (1-Pendiente, 2-En curso, 3-Finalizada): ";
-    do {
-        cin >> estado;
-        if (estado < 1 || estado > 3) {
-            cout << "Estado invalido. Ingrese 1, 2 o 3: ";
-        }
-    } while (estado < 1 || estado > 3);
-
-    char respuesta;
-    cout << "¿Esta pagado? (s/n): ";
-    cin >> respuesta;
-    pagado = (respuesta == 's' || respuesta == 'S');
-
     cout << "Reparacion cargada exitosamente!" << endl;
 }
 
@@ -70,9 +57,13 @@ void Reparacion::mostrarReparacion() const {
     cout << "ID CLIENTE: " << IDCliente << endl;
     cout << "ID EMPLEADO: " << IDEmpleado << endl;
     cout << "FECHA INGRESO: ";
+    cout << endl;
     fechaIngreso.mostrarFecha();
+    cout << endl;
     cout << "FECHA ENTREGA: ";
+     cout << endl;
     fechaEntrega.mostrarFecha();
+     cout << endl;
     cout << "DESCRIPCION: " << descripcionTrabajo << endl;
     cout << "REPUESTOS: " << repuestosUsados << endl;
     cout << "IMPORTE: $" << importe << endl;

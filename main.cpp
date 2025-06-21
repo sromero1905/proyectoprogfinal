@@ -149,11 +149,9 @@ void menuReparaciones() {
         limpiarPantalla();
         cout << "======== GESTION DE REPARACIONES ========" << endl;
         cout << "1. Agregar Reparacion" << endl;
-        cout << "2. Mostrar Reparacion" << endl;
-        cout << "3. Listar Todas las Reparaciones" << endl;
-        cout << "4. Buscar Reparacion por ID" << endl;
-        cout << "5. Modificar Estado de Reparacion" << endl;
-        cout << "6. Marcar como Pagado" << endl;
+        cout << "2. Listar Todas las Reparaciones" << endl;
+        cout << "3. Buscar Reparacion por ID" << endl;
+        cout << "4. Modificar Estado de Reparacion" << endl;
         cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -176,28 +174,13 @@ void menuReparaciones() {
                 pausar();
                 break;
             }
-            case 2: {
-                cout << "\n=== MOSTRAR REPARACION ===" << endl;
-                int id;
-                cout << "Ingrese ID de la reparacion: ";
-                cin >> id;
 
-                int pos = archivoReparaciones.buscarReparacion(id);
-                if (pos != -1) {
-                    Reparacion rep = archivoReparaciones.leerRegistro(pos);
-                    rep.mostrarReparacion();
-                } else {
-                    cout << "Reparacion no encontrada." << endl;
-                }
-                pausar();
-                break;
-            }
-            case 3:
+            case 2:
                 cout << "\n=== LISTAR REPARACIONES ===" << endl;
                 archivoReparaciones.listarRegistros();
                 pausar();
                 break;
-            case 4: {
+            case 3: {
                 cout << "\n=== BUSCAR REPARACION ===" << endl;
                 int id;
                 cout << "Ingrese ID de la reparacion: ";
@@ -213,7 +196,7 @@ void menuReparaciones() {
                 pausar();
                 break;
             }
-            case 5: {
+            case 4: {
                 cout << "\n=== MODIFICAR ESTADO ===" << endl;
                 int id, nuevoEstado;
                 cout << "Ingrese ID de la reparacion: ";
@@ -239,7 +222,7 @@ void menuReparaciones() {
                 pausar();
                 break;
             }
-            case 6: {
+            case 5: {
                 cout << "\n=== MARCAR COMO PAGADO ===" << endl;
                 int id;
                 cout << "Ingrese ID de la reparacion: ";
