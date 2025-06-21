@@ -197,67 +197,8 @@ void menuReparaciones() {
                 break;
             }
             case 4: {
-    cout << "\n=== MODIFICAR ESTADO ===" << endl;
-    int id, nuevoEstado;
-    cout << "Ingrese ID de la reparacion: ";
-    cin >> id;
-
-    int pos = archivoReparaciones.buscarReparacion(id);
-    if (pos != -1) {
-        Reparacion rep = archivoReparaciones.leerRegistro(pos);
-        rep.mostrarReparacion();
-
-        cout << "Nuevo estado (1-Pendiente, 2-En curso, 3-Finalizada): ";
-        cin >> nuevoEstado;
-
-        rep.setEstado(nuevoEstado);
-        if (archivoReparaciones.modificarRegistro(rep, pos) != -1) {
-
-
-            if (nuevoEstado == 3) {
-                char pagarAhora;
-                cout << "¿Desea marcar como pagado? (s/n): ";
-                cin >> pagarAhora;
-
-                if (pagarAhora == 's' || pagarAhora == 'S') {
-                    rep.setPagado(true);
-                    archivoReparaciones.modificarRegistro(rep, pos);
-
-                    Factura factura;
-
-                    cout << "Ingrese numero de factura: ";
-                    cin >> factura.NFactura;
-
-                    factura.NReparacion = rep.getIDReparacion();
-                    factura.Importe = rep.getImporte();
-                    factura.FechaEntrega = rep.getFechaEntrega();
-                    strcpy(factura.NPatente, rep.getPatente());
-                    factura.IDCliente = rep.getIDCliente();
-                    factura.ImporteTotal = rep.getImporte();
-
-                    FILE* archivo = fopen("facturas.dat", "ab");
-                    if (archivo != NULL) {
-                        fwrite(&factura, sizeof(Factura), 1, archivo);
-                        fclose(archivo);
-                        cout << "\n¡Factura generada automáticamente!" << endl;
-                        cout << "Número de factura: " << factura.NFactura << endl;
-                    } else {
-                        cout << "Error al generar la factura." << endl;
-                    }
-                }
-            }
-        } else {
-            cout << "Error al actualizar el estado." << endl;
-        }
-    } else {
-        cout << "Reparacion no encontrada." << endl;
-    }
-    pausar();
-    break;
-}
-            case 5: {
-                cout << "\n=== MARCAR COMO PAGADO ===" << endl;
-                int id;
+                cout << "\n=== MODIFICAR ESTADO ===" << endl;
+                int id, nuevoEstado;
                 cout << "Ingrese ID de la reparacion: ";
                 cin >> id;
 
@@ -266,17 +207,47 @@ void menuReparaciones() {
                     Reparacion rep = archivoReparaciones.leerRegistro(pos);
                     rep.mostrarReparacion();
 
-                    char confirma;
-                    cout << "¿Marcar como pagado? (s/n): ";
-                    cin >> confirma;
+                    cout << "Nuevo estado (1-Pendiente, 2-En curso, 3-Finalizada): ";
+                    cin >> nuevoEstado;
 
-                    if (confirma == 's' || confirma == 'S') {
-                        rep.setPagado(true);
-                        if (archivoReparaciones.modificarRegistro(rep, pos) != -1) {
-                            cout << "Reparacion marcada como pagada!" << endl;
-                        } else {
-                            cout << "Error al actualizar el pago." << endl;
+                    rep.setEstado(nuevoEstado);
+                    if (archivoReparaciones.modificarRegistro(rep, pos) != -1) {
+
+
+                        if (nuevoEstado == 3) {
+                            char pagarAhora;
+                            cout << "¿Desea marcar como pagado? (s/n): ";
+                            cin >> pagarAhora;
+
+                            if (pagarAhora == 's' || pagarAhora == 'S') {
+                                rep.setPagado(true);
+                                archivoReparaciones.modificarRegistro(rep, pos);
+
+                                Factura factura;
+
+                                cout << "Ingrese numero de factura: ";
+                                cin >> factura.NFactura;
+
+                                factura.NReparacion = rep.getIDReparacion();
+                                factura.Importe = rep.getImporte();
+                                factura.FechaEntrega = rep.getFechaEntrega();
+                                strcpy(factura.NPatente, rep.getPatente());
+                                factura.IDCliente = rep.getIDCliente();
+                                factura.ImporteTotal = rep.getImporte();
+
+                                FILE* archivo = fopen("facturas.dat", "ab");
+                                if (archivo != NULL) {
+                                    fwrite(&factura, sizeof(Factura), 1, archivo);
+                                    fclose(archivo);
+                                    cout << "\n¡Factura generada automáticamente!" << endl;
+                                    cout << "Número de factura: " << factura.NFactura << endl;
+                                } else {
+                                    cout << "Error al generar la factura." << endl;
+                                }
+                            }
                         }
+                    } else {
+                        cout << "Error al actualizar el estado." << endl;
                     }
                 } else {
                     cout << "Reparacion no encontrada." << endl;
@@ -284,6 +255,7 @@ void menuReparaciones() {
                 pausar();
                 break;
             }
+
             case 0:
                 break;
             default:
@@ -298,87 +270,31 @@ void menuFacturas() {
     do {
         limpiarPantalla();
         cout << "========== GESTION DE FACTURAS ==========" << endl;
-        cout << "1. Generar Factura" << endl;
-        cout << "2. Mostrar Factura por Numero" << endl;
-        cout << "3. Mostrar Todas las Facturas" << endl;
-        cout << "4. Generar Factura desde Reparacion" << endl;
+        cout << "1. Mostrar Factura por Numero" << endl;
+        cout << "2. Mostrar Todas las Facturas" << endl;
         cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
         switch (opcion) {
+
             case 1: {
-                cout << "\n=== GENERAR FACTURA ===" << endl;
-                Factura factura;
-                factura.generarFactura();
-                pausar();
-                break;
-            }
-            case 2: {
                 cout << "\n=== BUSCAR FACTURA POR NUMERO ===" << endl;
                 Factura factura;
                 factura.mostrarFactura();
                 pausar();
                 break;
             }
-            case 3: {
+            case 2: {
                 cout << "\n=== TODAS LAS FACTURAS ===" << endl;
                 Factura factura;
                 factura.mostrarTodasLasFacturas();
                 pausar();
                 break;
             }
-          case 4: {
-                        cout << "\n=== GENERAR FACTURA DESDE REPARACION ===" << endl;
-                        int idReparacion;
-                        cout << "Ingrese ID de la reparacion: ";
-                        cin >> idReparacion;
 
-                        int pos = archivoReparaciones.buscarReparacion(idReparacion);
-                        if (pos != -1) {
-                            Reparacion rep = archivoReparaciones.leerRegistro(pos);
-
-                            Factura factura;
-
-                            cout << "Ingrese numero de factura: ";
-                            cin >> factura.NFactura;
-
-                            factura.NReparacion = rep.getIDReparacion();
-                            factura.Importe = rep.getImporte();
-                            factura.FechaEntrega = rep.getFechaEntrega();
-                            strcpy(factura.NPatente, rep.getPatente());
-                            factura.IDCliente = rep.getIDCliente();
-                            factura.ImporteTotal = rep.getImporte();
-
-                            // Guarda en archivo
-                            FILE* archivo = fopen("facturas.dat", "ab");
-                            if (archivo != NULL) {
-                                fwrite(&factura, sizeof(Factura), 1, archivo);
-                                fclose(archivo);
-                                cout << "\nFactura guardada exitosamente!" << endl;
-                            } else {
-                                cout << "\nError al guardar la factura!" << endl;
-                            }
-
-                            cout << "\n=== FACTURA GENERADA EXITOSAMENTE ===" << endl;
-                            cout << "NUMERO DE FACTURA: " << factura.NFactura << endl;
-                            cout << "NUMERO DE REPARACION: " << factura.NReparacion << endl;
-                            cout << "IMPORTE: $" << factura.Importe << endl;
-                            cout << "FECHA DE ENTREGA: ";
-                            factura.FechaEntrega.mostrarFecha();
-                            cout << endl;
-                            cout << "PATENTE: " << factura.NPatente << endl;
-                            cout << "ID CLIENTE: " << factura.IDCliente << endl;
-                            cout << "IMPORTE TOTAL: $" << factura.ImporteTotal << endl;
-
-                        } else {
-                            cout << "Reparacion no encontrada." << endl;
-                        }
-                        pausar();
-                        break;
-                    }
-                                case 0:
+              case 0:
                 cout << "Volviendo al menu principal..." << endl;
                 break;
             default:
