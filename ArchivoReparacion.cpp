@@ -92,7 +92,7 @@ int ArchivoReparacion::buscarReparacion(int id) {
 }
 
 Reparacion ArchivoReparacion::leerRegistro(int pos) {
-    Reparacion reparacion; // Reparación vacia por defecto
+    Reparacion reparacion;
 
     FILE* archivo = fopen(nombreArchivo, "rb");
     if (archivo == nullptr) {
@@ -100,14 +100,13 @@ Reparacion ArchivoReparacion::leerRegistro(int pos) {
         return reparacion;
     }
 
-    // Mover el puntero a la posición especificada
     if (fseek(archivo, pos * tamRegistro, SEEK_SET) != 0) {
         cout << "Error: No se pudo acceder a la posicion especificada." << endl;
         fclose(archivo);
         return reparacion;
     }
 
-    // Leer el registro
+    // Lee el registro
     if (fread(&reparacion, tamRegistro, 1, archivo) != 1) {
         cout << "Error: No se pudo leer el registro." << endl;
     }
@@ -123,14 +122,13 @@ int ArchivoReparacion::modificarRegistro(const Reparacion r, int pos) {
         return -1;
     }
 
-    // Mover el puntero a la posición especificada
     if (fseek(archivo, pos * tamRegistro, SEEK_SET) != 0) {
         cout << "Error: No se pudo acceder a la posicion especificada." << endl;
         fclose(archivo);
         return -1;
     }
 
-    // Escribir el registro modificado
+    // Escribe el registro modificado
     int resultado = fwrite(&r, tamRegistro, 1, archivo);
     fclose(archivo);
 
