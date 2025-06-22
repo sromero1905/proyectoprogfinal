@@ -276,6 +276,7 @@ void menuFacturas() {
         cout << "========== GESTION DE FACTURAS ==========" << endl;
         cout << "1. Mostrar Factura por Numero" << endl;
         cout << "2. Mostrar Todas las Facturas" << endl;
+        cout << "3. Mostrar Ultima Factura"<< endl;
         cout << "0. Volver al Menu Principal" << endl;
         cout << "=========================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -297,7 +298,11 @@ void menuFacturas() {
                 pausar();
                 break;
             }
-
+            case 3: {
+                Factura factura;
+                factura.mostrarUltimaFactura ();
+                pausar ();
+            }
               case 0:
                 cout << "Volviendo al menu principal..." << endl;
                 break;

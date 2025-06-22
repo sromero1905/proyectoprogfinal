@@ -699,13 +699,13 @@
 	"Persona.h"
 	<cstring>
 
-1750550027 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.cpp
+1750563480 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
 	"Factura.h"
 
-1750550027 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.h
+1750563480 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.h
 	"Fecha.h"
 
 1750550027 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\fecha.cpp
@@ -724,7 +724,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750550311 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\main.cpp
+1750563497 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"

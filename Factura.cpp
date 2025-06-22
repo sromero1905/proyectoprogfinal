@@ -118,3 +118,34 @@ void Factura::mostrarTodasLasFacturas() {
 
     fclose(archivo);
 }
+
+
+void Factura::mostrarUltimaFactura() {
+    FILE* archivo = fopen("facturas.dat", "rb");
+    if (archivo == NULL) {
+        cout << "No existen facturas guardadas." << endl;
+        return;
+    }
+    fseek(archivo, 0, SEEK_END);
+    long tam = ftell(archivo);
+    if (tam == 0) {
+        cout << "No existen facturas guardadas." << endl;
+        fclose(archivo);
+        return;
+    }
+    int total = tam / sizeof(Factura);
+    fseek(archivo, (total - 1) * sizeof(Factura), SEEK_SET);
+    Factura f;
+    fread(&f, sizeof(Factura), 1, archivo);
+    fclose(archivo);
+    cout << "\n=== ULTIMA FACTURA GENERADA ===" << endl;
+    cout << "NUMERO DE FACTURA: " << f.NFactura << endl;
+    cout << "NUMERO DE REPARACION: " << f.NReparacion << endl;
+    cout << "IMPORTE: $" << f.Importe << endl;
+    cout << "FECHA DE ENTREGA: ";
+    f.FechaEntrega.mostrarFecha();
+    cout << endl;
+    cout << "PATENTE: " << f.NPatente << endl;
+    cout << "ID CLIENTE: " << f.IDCliente << endl;
+    cout << "IMPORTE TOTAL: $" << f.ImporteTotal << endl;
+}

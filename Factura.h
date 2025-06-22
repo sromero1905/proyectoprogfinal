@@ -20,7 +20,7 @@ public:
     void generarFactura();
     void mostrarFactura();
     void mostrarTodasLasFacturas();
-
+    void mostrarUltimaFactura ();
 private:
     void guardarEnArchivo();
 };
