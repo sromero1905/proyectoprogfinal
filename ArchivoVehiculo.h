@@ -15,7 +15,7 @@ public:
     bool listarRegistros();
     bool bajaVehiculo (const char *patente);
     int ModificarRegistro (const Vehiculo veh, int pos);
-    int BuscarVehiculoPorPatente(const char* PatenteBuscar); // <- agregar esta línea
+    int BuscarVehiculoPorPatente(const char* PatenteBuscar);
 
     int BuscarVehiculo(const char* patente);
     Vehiculo LeerRegistro(int pos);

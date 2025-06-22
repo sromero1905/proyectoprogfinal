@@ -228,3 +228,18 @@ void ArchivoCliente::EliminarCliente() {
 
     fclose(archivo);
 }
+
+
+bool ArchivoCliente::ExisteCliente(int id) {
+    FILE* archivo = fopen(NombreArchivo, "rb");
+    if (!archivo) return false;
+    Cliente cliente;
+    while (fread(&cliente, TamRegistro, 1, archivo) == 1) {
+        if (cliente.getIDCliente() == id && cliente.getEstado()) {
+            fclose(archivo);
+            return true;
+        }
+    }
+    fclose(archivo);
+    return false;
+}

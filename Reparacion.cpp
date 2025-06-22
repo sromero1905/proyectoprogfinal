@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstring>
 #include "Reparacion.h"
+#include "ArchivoVehiculo.h"
+#include "ArchivoCliente.h"
+#include "ArchivoEmpleado.h"
 
 using namespace std;
 
@@ -18,18 +21,39 @@ Reparacion::Reparacion() {
     pagado = false;
 }
 
-void Reparacion::cargarReparacion() {
+bool Reparacion::cargarReparacion() {
     cout << "=== CARGAR NUEVA REPARACION ===" << endl;
 
-    cout << "Ingrese patente del vehículo: ";
-    cin.ignore();
-    cin.getline(patente, 10);
+    cout << "Ingrese patente del vehiculo: ";
+    cin >> patente;
+
+    // VALIDACION DE PATENTE
+    ArchivoVehiculo archivoVehiculos;
+    int posVehiculo = archivoVehiculos.BuscarVehiculoPorPatente(patente);
+    if (posVehiculo == -1) {
+        cout << "Patente no encontrada, por favor registre primero el vehiculo." << endl;
+        return false;
+    }
 
     cout << "Ingrese ID del cliente: ";
     cin >> IDCliente;
 
+    // VALIDACION DE CLIENTE
+    ArchivoCliente ArchivoCliente;
+    if (!ArchivoCliente.ExisteCliente(IDCliente)) {
+        cout << "ID de cliente no encontrado, por favor registre primero el cliente." << endl;
+        return false;
+    }
+
     cout << "Ingrese ID del empleado: ";
     cin >> IDEmpleado;
+
+    // VALIDACION DE EMPLEADO
+    ArchivoEmpleado ArchivoEmpleado;
+    if (ArchivoEmpleado.buscarEmpleado(IDEmpleado) == -1) {
+        cout << "ID de empleado no encontrado, por favor registre primero el empleado." << endl;
+        return false;
+    }
 
     cout << "Ingrese fecha de ingreso:" << endl;
     fechaIngreso.cargarFecha();
@@ -37,8 +61,8 @@ void Reparacion::cargarReparacion() {
     cout << "Ingrese fecha de entrega estimada:" << endl;
     fechaEntrega.cargarFecha();
 
-    cout << "Ingrese descripcion del trabajo: ";
     cin.ignore();
+    cout << "Ingrese descripcion del trabajo: ";
     cin.getline(descripcionTrabajo, 200);
 
     cout << "Ingrese repuestos utilizados: ";
@@ -46,8 +70,9 @@ void Reparacion::cargarReparacion() {
 
     cout << "Ingrese importe: $";
     cin >> importe;
+    cin.ignore();
 
-    cout << "Reparacion cargada exitosamente!" << endl;
+    return true;
 }
 
 void Reparacion::mostrarReparacion() const {

@@ -162,10 +162,14 @@ void menuReparaciones() {
         cin >> opcion;
 
         switch (opcion) {
-            case 1: {
-               cout << "\n=== AGREGAR REPARACION ===" << endl;
+                       case 1: {
+                cout << "\n=== AGREGAR REPARACION ===" << endl;
+                cin.ignore();
                 Reparacion reparacion;
-                reparacion.cargarReparacion();
+                if (!reparacion.cargarReparacion()) {
+                    pausar();
+                    break;
+                }
 
                 int nuevoID = archivoReparaciones.obtenerProximoID();
                 reparacion.setIDReparacion(nuevoID);
@@ -178,7 +182,6 @@ void menuReparaciones() {
                 pausar();
                 break;
             }
-
             case 2:
                 cout << "\n=== LISTAR REPARACIONES ===" << endl;
                 archivoReparaciones.listarRegistros();

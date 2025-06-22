@@ -20,7 +20,7 @@ private:
 public:
     Reparacion();
 
-    void cargarReparacion();
+    bool cargarReparacion();
 
     void mostrarReparacion() const;
 
