@@ -41,6 +41,8 @@
 		<Unit filename="ArchivoReparacion.h" />
 		<Unit filename="ArchivoVehiculo.cpp" />
 		<Unit filename="ArchivoVehiculo.h" />
+		<Unit filename="BackUp.cpp" />
+		<Unit filename="BackUp.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
 		<Unit filename="Empleado.cpp" />

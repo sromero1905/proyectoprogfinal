@@ -8,6 +8,7 @@
 #include "Factura.h"
 #include "Informes.h"
 #include "ArchivoVehiculo.h"
+#include "BackUp.h"
 using namespace std;
 
 void menuPrincipal();
@@ -53,6 +54,7 @@ void menuPrincipal() {
         cout << "4. Gestion de Empleados" << endl;
         cout << "5. Gestion de Informes"<<endl;
         cout << "6. Gestion de Vehiculos"<< endl;
+        cout << "7. Gestion de BackUps"<< endl;
         cout << "0. Salir" << endl;
         cout << "====================================" << endl;
         cout << "Seleccione una opcion: ";
@@ -79,6 +81,8 @@ void menuPrincipal() {
            case 6:
             menuVehiculo();
             break;
+           case 7:
+            menuBackup ();
             case 0:
                 cout << "Saliendo del sistema..." << endl;
                 break;
