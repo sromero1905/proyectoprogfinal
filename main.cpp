@@ -113,6 +113,7 @@ void menuClientes() {
         switch (opcion) {
             case 1:
                 cout << "\n=== AGREGAR CLIENTE ===" << endl;
+                system ("cls");
                 archivoClientes.AgregarCliente();
                 pausar();
                 break;

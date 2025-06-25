@@ -159,7 +159,7 @@ void Vehiculo::ModificarVehiculo() {
         cout << "2. Modelo [" << modelo << "]" << endl;
         cout << "3. Anio [" << anio << "]" << endl;
         cout << "4. Falla/Servicio [" << falla << "]" << endl;
-        cout << "5. Tipo de Vehículo [" << tipoVehiculo << "]" << endl;
+        cout << "5. Tipo de Vehiculo [" << tipoVehiculo << "]" << endl;
         cout << "6. ID Cliente [" << IDCliente << "]" << endl;
         cout << "7. Estado [" << (estado ? "Activo" : "Inactivo") << "]" << endl;
         cout << "0. Salir" << endl;

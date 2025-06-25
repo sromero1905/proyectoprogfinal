@@ -92,26 +92,50 @@ void Empleado::cargarEmpleado () {
     setActivo (true);
 }
 
-void Empleado::actualizarEmpleado ( ){
-char nuevoNombre [50];
-int nuevoValor;
+void Empleado::actualizarEmpleado() {
+    int opcion;
+    char nuevoTexto[50];
+    int nuevoTelefono;
+    bool editar = true;
 
-cout << "Nombre ["<< getNombre () <<  "]: ";
-cin  >> nuevoNombre;
-setNombre (nuevoNombre);
+    while (editar) {
+        cout << "\n=== EDITAR EMPLEADO ===" << endl;
+        cout << "1. Editar nombre (actual: " << getNombre() << ")" << endl;
+        cout << "2. Editar apellido (actual: " << getApellido() << ")" << endl;
+        cout << "3. Editar telefono (actual: " << getTelefono() << ")" << endl;
+        cout << "4. Editar especialidad (actual: " << getEspecialidad() << ")" << endl;
+        cout << "5. Salir y guardar cambios" << endl;
+        cout << "---------------------------------" << endl;
+        cout << "DNI [" << getDNI() << "] (NO MODIFICABLE)" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
 
-cout << "Apellido [" << getApellido () << "]: ";
-cin >> nuevoNombre;
-setApellido (nuevoNombre);
-
- cout << "DNI [" << getDNI() << "] (NO MODIFICABLE)" << endl;
-
-cout << "Telefono [" << getTelefono() << "]: ";
-cin >> nuevoValor;
-setTelefono (nuevoValor);
-
-cout << "Especialidad [" << getEspecialidad() << "]: ";
-cin >> nuevoNombre;
-setEspecialidad (nuevoNombre);
-
+        switch (opcion) {
+            case 1:
+                cout << "Nuevo nombre: ";
+                cin >> nuevoTexto;
+                setNombre(nuevoTexto);
+                break;
+            case 2:
+                cout << "Nuevo apellido: ";
+                cin >> nuevoTexto;
+                setApellido(nuevoTexto);
+                break;
+            case 3:
+                cout << "Nuevo telefono: ";
+                cin >> nuevoTelefono;
+                setTelefono(nuevoTelefono);
+                break;
+            case 4:
+                cout << "Nueva especialidad: ";
+                cin >> nuevoTexto;
+                setEspecialidad(nuevoTexto);
+                break;
+            case 5:
+                editar = false;
+                break;
+            default:
+                cout << "Opcion invalida, intente nuevamente." << endl;
+        }
+    }
 }
