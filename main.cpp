@@ -495,6 +495,8 @@ void menuVehiculo () {
         cout << "5. Reparaciones por Empleado" << endl;
         cout << "6. Vehiculo Mas Reparado" << endl;
         cout << "7. Reparaciones por Estado" << endl;
+        cout << "0. Volver al Menu Principal" << endl;
+
         cout << "Opcion: ";
         cin >> opcion;
 

@@ -32,7 +32,7 @@ int ArchivoReparacion::agregarRegistro(const Reparacion r) {
 
     if (resultado == 1) {
         cout << "Reparacion agregada exitosamente!" << endl;
-        return 0; // Éxito
+        return 0; // exito
     } else {
         cout << "Error: No se pudo guardar la reparacion." << endl;
         return -1; // Error

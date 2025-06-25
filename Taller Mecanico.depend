@@ -756,7 +756,7 @@
 	"Vehiculo.h"
 	"ArchivoVehiculo.h"
 
-1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\archivocliente.cpp
+1750645961 source:c:\users\santiago\desktop\proyectoprogfinal\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
@@ -794,7 +794,7 @@
 	"Reparacion.h"
 	<cstdio>
 
-1750459575 c:\users\santiago\desktop\proyectoprogfinal\reparacion.h
+1750645961 c:\users\santiago\desktop\proyectoprogfinal\reparacion.h
 	"Fecha.h"
 
 1750459575 c:\users\santiago\desktop\proyectoprogfinal\fecha.h
@@ -808,7 +808,7 @@
 1750459575 c:\users\santiago\desktop\proyectoprogfinal\vehiculo.h
 	"Fecha.h"
 
-1750459575 c:\users\santiago\desktop\proyectoprogfinal\archivovehiculo.h
+1750645961 c:\users\santiago\desktop\proyectoprogfinal\archivovehiculo.h
 	"Vehiculo.h"
 	<cstring>
 
@@ -824,13 +824,13 @@
 	"Persona.h"
 	<cstring>
 
-1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\factura.cpp
+1750645961 source:c:\users\santiago\desktop\proyectoprogfinal\factura.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
 	"Factura.h"
 
-1750459575 c:\users\santiago\desktop\proyectoprogfinal\factura.h
+1750645961 c:\users\santiago\desktop\proyectoprogfinal\factura.h
 	"Fecha.h"
 
 1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\fecha.cpp
@@ -849,7 +849,7 @@
 	"Factura.h"
 	<cstdio>
 
-1750523364 source:c:\users\santiago\desktop\proyectoprogfinal\main.cpp
+1750645961 source:c:\users\santiago\desktop\proyectoprogfinal\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"
@@ -860,16 +860,20 @@
 	"Factura.h"
 	"Informes.h"
 	"ArchivoVehiculo.h"
+	"BackUp.h"
 
 1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"
 
-1750522502 source:c:\users\santiago\desktop\proyectoprogfinal\reparacion.cpp
+1750645961 source:c:\users\santiago\desktop\proyectoprogfinal\reparacion.cpp
 	<iostream>
 	<cstring>
 	"Reparacion.h"
+	"ArchivoVehiculo.h"
+	"ArchivoCliente.h"
+	"ArchivoEmpleado.h"
 
 1750459575 source:c:\users\santiago\desktop\proyectoprogfinal\vehiculo.cpp
 	<iostream>
@@ -888,4 +892,16 @@
 	"ArchivoVehiculo.h"
 
 1750550203 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\backup.h
+
+1750645961 source:c:\users\santiago\desktop\proyectoprogfinal\backup.cpp
+	"Backup.h"
+	<cstdio>
+	<cstring>
+	<iostream>
+	"ArchivoEmpleado.h"
+	"ArchivoCliente.h"
+	"ArchivoReparacion.h"
+	"ArchivoVehiculo.h"
+
+1750645961 c:\users\santiago\desktop\proyectoprogfinal\backup.h
 

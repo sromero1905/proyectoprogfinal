@@ -17,7 +17,7 @@ Reparacion::Reparacion() {
     strcpy(descripcionTrabajo, "");
     strcpy(repuestosUsados, "");
     importe = 0.0;
-    estado = 1; // 1: Pendiente, 2: En curso, 3: Finalizada
+    estado = 1; // 1: Pendiente 2: curso 3: Finalizada
     pagado = false;
 }
 
@@ -48,7 +48,7 @@ bool Reparacion::cargarReparacion() {
     cout << "Ingrese ID del empleado: ";
     cin >> IDEmpleado;
 
-    // VALIDACION DE EMPLEADO
+    // VALIDA DE EMPLEADO
     ArchivoEmpleado ArchivoEmpleado;
     if (ArchivoEmpleado.buscarEmpleado(IDEmpleado) == -1) {
         cout << "ID de empleado no encontrado, por favor registre primero el empleado." << endl;

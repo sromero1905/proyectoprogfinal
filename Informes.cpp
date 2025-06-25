@@ -7,7 +7,7 @@ using namespace std;
 
 Informes::Informes() {}
 
-// ===== NUEVA FUNCIÓN: REPARACIONES POR ESTADO =====
+// ===== REPARACIONEs POR ESTADO =====
 void Informes::reparacionesPorEstado() {
     cout << "\n======== REPARACIONES POR ESTADO ========" << endl;
 
@@ -255,6 +255,8 @@ void Informes::vehiculoMasReparado() {
     cout << "Patente: " << patentes[indiceMax] << endl;
     cout << "Reparaciones: " << maxRep << endl;
 }
+
+
 
 // ===== FUNCIONES AUXILIARES =====
 float Informes::calcularRecaudacionMes(int mes, int anio) {
