@@ -130,3 +130,34 @@ int ArchivoVehiculo::BuscarVehiculoPorPatente(const char* PatenteBuscar) {
     fclose(p);
     return -1; // No encontrado
 }
+
+
+
+void ArchivoVehiculo::listarPatentesDisponibles() {
+    FILE* archivo = fopen(nombreArchivo, "rb");
+    if (!archivo) {
+        cout << "No se pudo abrir el archivo de vehiculos." << endl;
+        return;
+    }
+
+    Vehiculo obj;
+    bool hayPatentes = false;
+    cout << "=== Vehiculos Disponibles ===" << endl;
+    while (fread(&obj, tamRegistro, 1, archivo)) {
+        if (obj.getEstado()) {
+            cout << "Patente: " << obj.getPatente() << endl;
+            cout << "Marca: " << obj.getMarca() << endl;
+            cout << "Modelo: " << obj.getModelo() << endl;
+            cout << "Anio: " << obj.getAnio() << endl;
+            cout << "Falla: " << obj.getFalla() << endl;
+            cout << "-----------------------------" << endl;
+            hayPatentes = true;
+        }
+    }
+    fclose(archivo);
+
+    if (!hayPatentes) {
+        cout << "No hay vehiculos activos cargados." << endl;
+    }
+}
+

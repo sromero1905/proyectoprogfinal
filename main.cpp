@@ -164,7 +164,6 @@ void menuReparaciones() {
 
         switch (opcion) {
                        case 1: {
-                cout << "\n=== AGREGAR REPARACION ===" << endl;
                 cin.ignore();
                 Reparacion reparacion;
                 if (!reparacion.cargarReparacion()) {

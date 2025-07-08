@@ -16,6 +16,7 @@ public:
     bool bajaVehiculo (const char *patente);
     int ModificarRegistro (const Vehiculo veh, int pos);
     int BuscarVehiculoPorPatente(const char* PatenteBuscar);
+    void listarPatentesDisponibles ();
 
     int BuscarVehiculo(const char* patente);
     Vehiculo LeerRegistro(int pos);

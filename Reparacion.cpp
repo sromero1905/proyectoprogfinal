@@ -24,11 +24,13 @@ Reparacion::Reparacion() {
 bool Reparacion::cargarReparacion() {
     cout << "=== CARGAR NUEVA REPARACION ===" << endl;
 
+ ArchivoVehiculo archivoVehiculos;
+    archivoVehiculos.listarPatentesDisponibles();
+
     cout << "Ingrese patente del vehiculo: ";
     cin >> patente;
 
     // VALIDACION DE PATENTE
-    ArchivoVehiculo archivoVehiculos;
     int posVehiculo = archivoVehiculos.BuscarVehiculoPorPatente(patente);
     if (posVehiculo == -1) {
         cout << "Patente no encontrada, por favor registre primero el vehiculo." << endl;
