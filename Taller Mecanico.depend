@@ -640,7 +640,7 @@
 	"Cliente.h"
 	<cstdio>
 
-1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.h
+1752011885 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.h
 	"Persona.h"
 
 1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.h
@@ -655,7 +655,7 @@
 1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.h
 	"Persona.h"
 
-1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.h
+1752012925 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.h
 	"Empleado.h"
 	<cstdio>
 	<cstring>
@@ -724,7 +724,7 @@
 	"Factura.h"
 	<cstdio>
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\main.cpp
+1751988675 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\main.cpp
 	<iostream>
 	<cstdlib>
 	"Cliente.h"

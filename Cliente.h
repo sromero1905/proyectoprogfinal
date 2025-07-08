@@ -25,7 +25,7 @@ public:
     void eliminarCliente();
 
     // Getters
-    int getIDCliente() const;
+    int getIDCliente() const ;
     const char* getCUIT() const;
     const char* getEmail() const;
     int getTipoCliente() const;

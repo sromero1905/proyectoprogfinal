@@ -34,6 +34,8 @@ public:
    int obtenerSiguienteId();
 
    void mostrarEmpleadoPorID (int idEmpleado);
+
+   void listarEmpleadosDisponibles();
 };
 
 #endif // ARCHIVOEMPLEADO_H

@@ -149,3 +149,29 @@ void ArchivoEmpleado::mostrarEmpleadoPorID(int idEmpleado) {
     Empleado obj = leerRegistro(pos);
     obj.mostrarEmpleado();
 }
+
+
+void ArchivoEmpleado::listarEmpleadosDisponibles() {
+    Empleado obj;
+    FILE* p = fopen(nombreArchivo, "rb");
+    if (!p) {
+        std::cout << "No se pudo abrir el archivo de empleados." << std::endl;
+        return;
+    }
+
+    bool hayEmpleados = false;
+    std::cout << "\n=== EMPLEADOS DISPONIBLES ===" << std::endl;
+    while (fread(&obj, tamRegistro, 1, p)) {
+        if (obj.estaActivo()) {
+            obj.mostrarEmpleado();
+            std::cout << "------------------------" << std::endl;
+            hayEmpleados = true;
+        }
+    }
+
+    fclose(p);
+
+    if (!hayEmpleados) {
+        std::cout << "No hay empleados activos cargados." << std::endl;
+    }
+}

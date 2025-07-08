@@ -21,10 +21,13 @@ Reparacion::Reparacion() {
     pagado = false;
 }
 
+ ArchivoVehiculo archivoVehiculos;
+
+
 bool Reparacion::cargarReparacion() {
     cout << "=== CARGAR NUEVA REPARACION ===" << endl;
 
- ArchivoVehiculo archivoVehiculos;
+
     archivoVehiculos.listarPatentesDisponibles();
 
     cout << "Ingrese patente del vehiculo: ";
@@ -36,7 +39,9 @@ bool Reparacion::cargarReparacion() {
         cout << "Patente no encontrada, por favor registre primero el vehiculo." << endl;
         return false;
     }
-
+    system ("cls");
+ ArchivoCliente archivoClientes;
+    archivoClientes.MostrarCliente ();
     cout << "Ingrese ID del cliente: ";
     cin >> IDCliente;
 
@@ -46,7 +51,10 @@ bool Reparacion::cargarReparacion() {
         cout << "ID de cliente no encontrado, por favor registre primero el cliente." << endl;
         return false;
     }
+    system ("cls");
 
+ArchivoEmpleado archivoEmpleados;
+archivoEmpleados.listarEmpleadosDisponibles();
     cout << "Ingrese ID del empleado: ";
     cin >> IDEmpleado;
 
