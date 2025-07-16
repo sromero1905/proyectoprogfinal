@@ -20,7 +20,7 @@ public:
     Vehiculo (const char *patente, const char *marca, const char *modelo, int anio, const char* falla, int tipoVehiculo, int IDCliente);
 
     void cargarVehiculo();
-    void mostrarVehiculo() const;
+    void mostrarVehiculo();
     void ModificarVehiculo ();
 
 

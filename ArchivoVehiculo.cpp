@@ -19,6 +19,7 @@ int ArchivoVehiculo::AgregarRegistro() {
     fclose(archivo);
     return escribio;
 }
+
 //ABML: BAJA LOGICA
 bool ArchivoVehiculo::bajaVehiculo(const char* patenteBuscada) {
     FILE* archivo = fopen(nombreArchivo, "rb+");

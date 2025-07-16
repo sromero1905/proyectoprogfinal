@@ -7,9 +7,9 @@ using namespace std;
 
 ArchivoVehiculo::ArchivoVehiculo(const char* n) {
     strcpy(nombreArchivo, n);
-    tamRegistro = sizeof(Vehiculo);
+    tamRegistro = sizeof(Vehiculo); //constructor del archivo vehiculo
 }
-Vehiculo::Vehiculo() {
+Vehiculo::Vehiculo() { //constructor por defecto (se encarga de inicializar los atributos en 0)
     patente[0] = '\0';
     marca[0] = '\0';
     modelo[0] = '\0';
@@ -22,7 +22,7 @@ Vehiculo::Vehiculo() {
 
 
 Vehiculo::Vehiculo (const char *patente, const char *marca, const char *modelo, int anio, const char* falla, int tipoVehiculo, int IDCliente){
-
+//cosntructor parametrizado
 setPatente (patente);
 setMarca (marca);
 setModelo (modelo);
@@ -71,7 +71,7 @@ bool Vehiculo::getEstado() const {
     return estado;
 }
 
-//Setters
+//Setters REVISAR NOMBRE VARIABLE DE SETTERS
 void Vehiculo::setPatente(const char* nuevaPatente) {
     strncpy(patente, nuevaPatente, sizeof(patente) - 1);
     patente[sizeof(patente) - 1] = '\0';
@@ -115,35 +115,52 @@ void Vehiculo::setEstado(bool e) {
 
 //FUNCIONES
 void Vehiculo::cargarVehiculo() {
+    char patente [10], marca [30], modelo [30], falla [200];
+    int anio, tipoVehiculo, IDCliente, estado;
       cin.ignore();
-    cout << "Ingrese patente: ";
+      cout << "Ingrese patente: ";
     cin.getline(patente, 10);
+    setPatente(patente);
+
     cout << "Ingrese marca: ";
     cin.getline(marca, 30);
+    setMarca(marca);
+
     cout << "Ingrese modelo: ";
     cin.getline(modelo, 30);
+    setModelo(modelo);
+
     cout << "Ingrese anio: ";
     cin >> anio;
+    setAnio(anio);
+
     cin.ignore();
     cout << "Ingrese falla o servicio: ";
     cin.getline(falla, 200);
-    cout << "Ingrese tipo de vehiculo(1=Auto 2=Moto 3=Camioneta 4=Camion: " ;
+    setFalla(falla);
+
+    cout << "Ingrese tipo de vehiculo (1=Auto 2=Moto 3=Camioneta 4=Camion): ";
     cin >> tipoVehiculo;
+    setTipoVehiculo(tipoVehiculo);
+
     cout << "Ingrese ID del cliente: ";
     cin >> IDCliente;
+    setIDCliente(IDCliente);
+
     cout << "Ingrese estado (1 = activo, 0 = inactivo): ";
     cin >> estado;
+    setEstado(estado!= 0);
 }
 
-void Vehiculo::mostrarVehiculo() const {
-    cout << "Patente: " << patente << endl;
-    cout << "Marca: " << marca << endl;
-    cout << "Modelo: " << modelo << endl;
-    cout << "Anio: " << anio << endl;
-    cout << "Falla: " << falla << endl;
-    cout << "Tipo de vehiculo: " << tipoVehiculo << endl;
-    cout << "ID Cliente: " << IDCliente << endl;
-    cout << "Estado: " << (estado ? "Activo" : "Inactivo") << endl;
+void Vehiculo::mostrarVehiculo()  {
+    cout << "Patente: " << getPatente ()<< endl;
+    cout << "Marca: " << getMarca () << endl;
+    cout << "Modelo: " << getModelo () << endl;
+    cout << "Anio: " << getAnio ()<< endl;
+    cout << "Falla: " << getFalla () << endl;
+    cout << "Tipo de vehiculo: " << getTipoVehiculo ()<< endl;
+    cout << "ID Cliente: " << getIDCliente ()<< endl;
+    cout << "Estado: " << (getEstado () ? "Activo" : "Inactivo") << endl;
     cout << endl;
 }
 
@@ -165,7 +182,7 @@ void Vehiculo::ModificarVehiculo() {
         cout << "0. Salir" << endl;
         cout << "Opcion: ";
         cin >> opcion;
-        cin.ignore();
+        cin.ignore(); //REVISAR IGNORE NO NECESARIO
 
         switch (opcion) {
             case 1:
