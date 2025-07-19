@@ -7,7 +7,7 @@ using namespace std;
 
 Informes::Informes() {}
 
-// ===== REPARACIONEs POR ESTADO =====
+// ===== REPARACIONES POR ESTADO =====
 void Informes::reparacionesPorEstado() {
     cout << "\n======== REPARACIONES POR ESTADO ========" << endl;
 

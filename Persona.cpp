@@ -3,6 +3,7 @@
 #include "Persona.h"
 using namespace std;
 
+//CONSTRUCTOR POR DEFECTO
 Persona::Persona() {
     strcpy(_Nombre, "");
     strcpy(_Apellido, "");
@@ -10,7 +11,7 @@ Persona::Persona() {
     _Telefono = 0;
 }
 
-// ← AGREGAR ESTE CONSTRUCTOR QUE FALTA
+//CONSTRUCTOR PARAMETRIZADO
 Persona::Persona(const char* nom, const char* ape, int dni, int tel) {
     setNombre(nom);
     setApellido(ape);
@@ -18,17 +19,27 @@ Persona::Persona(const char* nom, const char* ape, int dni, int tel) {
     setTelefono(tel);
 }
 
-// ← AGREGO ESTE MÉTODO QUE FALTA
+//CARGA DE DATOS DE UNA PERSONA
 void Persona::cargarDatosPersona() {
+    char nombre[50], apellido[50];
+    int dni, telefono;
+
     cout << "INGRESAR NOMBRE: ";
     cin.ignore();
-    cin.getline(_Nombre, 50);
+    cin >> nombre;
+    setNombre(nombre);
+
     cout << "INGRESAR APELLIDO: ";
-    cin.getline(_Apellido, 50);
+    cin>> apellido;
+    setApellido(apellido);
+
     cout << "INGRESAR DNI: ";
-    cin >> _dni;
+    cin >> dni;
+    setDNI(dni);
+
     cout << "INGRESAR TELEFONO: ";
-    cin >> _Telefono;
+    cin >> telefono;
+    setTelefono(telefono);
 }
 
 // ← AGREGO ESTE MÉTODO QUE FALTA

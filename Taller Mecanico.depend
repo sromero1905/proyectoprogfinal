@@ -712,7 +712,7 @@
 	"Fecha.h"
 	<iostream>
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\informes.cpp
+1752893615 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\informes.cpp
 	<iostream>
 	<cstring>
 	<cstdio>
@@ -737,7 +737,7 @@
 	"ArchivoVehiculo.h"
 	"BackUp.h"
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.cpp
+1752941610 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"
