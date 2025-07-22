@@ -57,26 +57,25 @@ Empleado ArchivoEmpleado::leerRegistro (int pos) {
 
 }
 
-//ABML: BAJA
-bool ArchivoEmpleado::bajaEmpleado (int IdEmpleado) {
-int pos = buscarEmpleado (IdEmpleado);
-if (pos < 0) {
-    return false;
+// ABML: BAJA
+bool ArchivoEmpleado::bajaEmpleado(int idEmpleado) {
+    int pos = buscarEmpleado(idEmpleado);
+    if (pos < 0) {
+        return false;
+    }
+    Empleado obj = leerRegistro(pos);
+
+    obj.eliminarEmpleado();
+
+    FILE* p = fopen(nombreArchivo, "rb+");
+    if (!p) return false;
+
+    fseek(p, pos * tamRegistro, SEEK_SET);
+    int escribio = fwrite(&obj, tamRegistro, 1, p);
+    fclose(p);
+
+    return (escribio == 1);
 }
-Empleado obj = leerRegistro (pos);
-
-obj.setActivo (false);
-
-FILE* p =fopen (nombreArchivo, "rb+");
-if (!p) return false;
-
-fseek (p, pos * tamRegistro, SEEK_SET);
-int escribio = fwrite (&obj, tamRegistro, 1, p);
-fclose (p);
-
-return (escribio == 1);
-}
-
 
 //ABML: MODIFICAR
 bool ArchivoEmpleado::modificarEmpleado(int idEmpleado) {

@@ -8,10 +8,10 @@ public:
     void mostrarDatosPersona() const;
 
     // Getters
-    const char* getNombre();
-    const char* getApellido();
-    int getDNI();
-    int getTelefono();
+    const char* getNombre() const;
+    const char* getApellido() const ;
+    int getDNI() const;
+    int getTelefono() const;
 
     // Setters
     void setNombre(const char* nom);

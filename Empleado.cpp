@@ -139,3 +139,7 @@ void Empleado::actualizarEmpleado() {
         }
     }
 }
+
+void Empleado::eliminarEmpleado() {
+    setActivo(false);
+}

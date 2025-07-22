@@ -27,89 +27,132 @@ Cliente::Cliente(const char* nom, const char* ape, int dni, int tel, int idClien
 }
 
 void Cliente::cargarCliente() {
+    char nombre[50], apellido[50], email[50], cuit[15], direccion[100];
+    int dni, telefono, tipo;
+
     cout << "=== CARGAR CLIENTE ===" << endl;
-    cargarDatosPersona();
-    cin.ignore();
 
-    cout << "Email: ";
-    cin.getline(Email, 50);
+    cout << "Ingrese el nombre: ";
+    cin >> nombre;
+    setNombre(nombre);
 
-    cout << "Tipo (1-Particular, 2-Empresa): ";
-    cin >> TipoCliente;
-    cin.ignore();
+    cout << "Ingrese el apellido: ";
+    cin >> apellido;
+    setApellido(apellido);
 
-    cout << "CUIT: ";
-    cin.getline(CUIT, 15);
+    cout << "Ingrese DNI: ";
+    cin >> dni;
+    setDNI(dni);
 
-    cout << "Direccion: ";
-    cin.getline(Direccion, 100);
+    cout << "Ingrese teléfono: ";
+    cin >> telefono;
+    setTelefono(telefono);
 
-    estado = true;
+    cout << "Ingrese email: ";
+    cin >> email;
+    setEmail(email);
+
+    cout << "Ingrese tipo (1-Particular, 2-Empresa): ";
+    cin >> tipo;
+    setTipoCliente(tipo);
+
+    cout << "Ingrese CUIT: ";
+    cin >> cuit;
+    setCUIT(cuit);
+
+    cout << "Ingrese dirección: ";
+    cin >> direccion;
+    setDireccion(direccion);
+
+    setEstado(true);
 }
 
 void Cliente::mostrarCliente() const {
-    cout << "ID: " << IDCliente << endl;
-    cout << "Nombre: ";
+    cout << "ID: " << getIDCliente () << endl;
     mostrarDatosPersona();
-    cout << "Email: " << Email << endl;
-    cout << "CUIT: " << (strlen(CUIT) > 0 ? CUIT : "No especificado") << endl;
-    cout << "Tipo: " << getTipoClienteTexto() << endl;
-    cout << "Direccion: " << Direccion << endl;
-    cout << "Estado: " << (estado ? "ACTIVO" : "INACTIVO") << endl;
+    cout << "EMAIL: " <<getEstado ()<< endl;
+    cout << "CUIT: " << (CUIT[0] != '\0' ? CUIT : "No especificado") << endl;
+    cout << "TIPO: " << getTipoClienteTexto() << endl;
+    cout << "DIRECCION: " << getDireccion() << endl;
+    cout << "ESTADO: " << (getEstado () ? "ACTIVO" : "INACTIVO") << endl;
 }
 
 
 void Cliente::actualizarCliente() {
     int opcion;
-    cout << "=== ACTUALIZAR CLIENTE ===" << endl;
-    cout << "1. Actualizar datos personales" << endl;
-    cout << "2. Actualizar email" << endl;
-    cout << "3. Actualizar direccion" << endl;
-    cout << "4. Actualizar CUIT" << endl;
-    cout << "5. Cambiar tipo de cliente" << endl;
-    cout << "Seleccione una opcion: ";
-    cin >> opcion;
+    char nuevoTexto[100];
+    char nuevoCUIT[15];
+    int nuevoTelefono, nuevoTipo;
+    bool editar = true;
 
-    switch (opcion) {
-        case 1:
-            cout << "Actualizando datos personales..." << endl;
-            actualizarNombreApellido ();
-            cout << "El DNI no puede ser modificado." << endl;
-            break;
-        case 2:
-            cout << "Nuevo email: ";
-            cin.ignore();
-            cin.getline(Email, 50);
-            break;
-        case 3:
-            cout << "Nueva direccion: ";
-            cin.ignore();
-            cin.getline(Direccion, 100);
-            break;
-        case 4:
-            cout << "Nuevo CUIT: ";
-            cin.ignore();
-            cin.getline(CUIT, 15);
-            break;
-        case 5:
-            cout << "Nuevo tipo (1-Particular, 2-Empresa): ";
-            do {
-                cin >> TipoCliente;
-                if (TipoCliente < 1 || TipoCliente > 2) {
-                    cout << "Tipo invalido. Ingrese 1 o 2: ";
-                }
-            } while (TipoCliente < 1 || TipoCliente > 2);
-            break;
-        default:
-            cout << "Opcion invalida." << endl;
-            return;
+    while (editar) {
+        cout << "\n=== ACTUALIZAR CLIENTE ===" << endl;
+        cout << "1. Editar nombre (actual: " << getNombre() << ")" << endl;
+        cout << "2. Editar apellido (actual: " << getApellido() << ")" << endl;
+        cout << "3. Editar teléfono (actual: " << getTelefono() << ")" << endl;
+        cout << "4. Editar email (actual: " << getEmail() << ")" << endl;
+        cout << "5. Editar direccion (actual: " << getDireccion() << ")" << endl;
+        cout << "6. Editar CUIT (actual: " << getCUIT() << ")" << endl;
+        cout << "7. Cambiar tipo de cliente (actual: " << getTipoClienteTexto() << ")" << endl;
+        cout << "8. Salir y guardar cambios" << endl;
+        cout << "---------------------------------" << endl;
+        cout << "DNI [" << getDNI() << "] (NO MODIFICABLE)" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1:
+                cout << "Nuevo nombre: ";
+                cin >> nuevoTexto;
+                setNombre(nuevoTexto);
+                break;
+            case 2:
+                cout << "Nuevo apellido: ";
+                cin >> nuevoTexto;
+                setApellido(nuevoTexto);
+                break;
+            case 3:
+                cout << "Nuevo teléfono: ";
+                cin >> nuevoTelefono;
+                setTelefono(nuevoTelefono);
+                break;
+            case 4:
+                cout << "Nuevo email: ";
+                cin >> nuevoTexto;
+                setEmail(nuevoTexto);
+                break;
+            case 5:
+                cout << "Nueva dirección: ";
+                cin >> nuevoTexto;
+                setDireccion(nuevoTexto);
+                break;
+            case 6:
+                cout << "Nuevo CUIT: ";
+                cin >> nuevoCUIT;
+                setCUIT(nuevoCUIT);
+                break;
+            case 7:
+                cout << "Nuevo tipo (1-Particular, 2-Empresa): ";
+                do {
+                    cin >> nuevoTipo;
+                    if (nuevoTipo < 1 || nuevoTipo > 2) {
+                        cout << "Tipo inválido. Ingrese 1 o 2: ";
+                    }
+                } while (nuevoTipo < 1 || nuevoTipo > 2);
+                setTipoCliente(nuevoTipo);
+                break;
+            case 8:
+                editar = false;
+                break;
+            default:
+                cout << "Opción inválida, intente nuevamente." << endl;
+        }
     }
-
 }
 
 
 void Cliente::eliminarCliente() {
-    estado = false;
+    setEstado(false);
 }
 
 // Getters

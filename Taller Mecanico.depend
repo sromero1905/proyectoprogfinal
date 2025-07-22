@@ -631,7 +631,7 @@
 	"Informes.h"
 	"ArchivoVehiculo.h"
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivocliente.cpp
+1753205690 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivocliente.cpp
 	<iostream>
 	<cstring>
 	"ArchivoCliente.h"
@@ -640,19 +640,19 @@
 	"Cliente.h"
 	<cstdio>
 
-1752011885 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.h
+1752948323 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.h
 	"Persona.h"
 
-1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.h
+1752948554 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.h
 
-1752012944 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.cpp
+1753207959 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
 	"Persona.h"
 	<cstring>
 
-1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.h
+1753206315 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.h
 	"Persona.h"
 
 1752012925 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\archivoempleado.h
@@ -687,12 +687,12 @@
 	"Vehiculo.h"
 	<cstring>
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.cpp
+1753205795 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\cliente.cpp
 	<iostream>
 	<cstring>
 	"Cliente.h"
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.cpp
+1753206644 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\empleado.cpp
 	<iostream>
 	"Empleado.h"
 	"ArchivoEmpleado.h"
@@ -708,7 +708,7 @@
 1751987220 c:\users\bauti\onedrive\escritorio\proyectoprogfinal\factura.h
 	"Fecha.h"
 
-1751987220 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\fecha.cpp
+1753028895 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\fecha.cpp
 	"Fecha.h"
 	<iostream>
 
@@ -737,7 +737,7 @@
 	"ArchivoVehiculo.h"
 	"BackUp.h"
 
-1752941610 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.cpp
+1753028895 source:c:\users\bauti\onedrive\escritorio\proyectoprogfinal\persona.cpp
 	<cstring>
 	<iostream>
 	"Persona.h"

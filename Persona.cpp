@@ -42,12 +42,12 @@ void Persona::cargarDatosPersona() {
     setTelefono(telefono);
 }
 
-// ← AGREGO ESTE MÉTODO QUE FALTA
+// MOSTRAR LOS DATOS DE PERSONA
 void Persona::mostrarDatosPersona() const {
-    cout << "NOMBRE: " << _Nombre << endl;
-    cout << "APELLIDO: " << _Apellido << endl;
-    cout << "DNI: " << _dni << endl;
-    cout << "TELEFONO: " << _Telefono << endl;
+    cout << "NOMBRE: " << getNombre() << endl;
+    cout << "APELLIDO: " << getApellido() << endl;
+    cout << "DNI: " << getDNI() << endl;
+    cout << "TELEFONO: " << getTelefono() << endl;
 }
 
 void Persona::actualizarNombreApellido() {
@@ -83,15 +83,15 @@ void Persona::setTelefono(int t) {
 }
 
 //getters
-const char* Persona::getNombre() {
+const char* Persona::getNombre() const {
     return _Nombre;
 }
-const char* Persona::getApellido() {
+const char* Persona::getApellido() const {
     return _Apellido;
 }
-int Persona::getDNI() {
+int Persona::getDNI() const {
     return _dni;
 }
-int Persona::getTelefono() {
+int Persona::getTelefono() const {
     return _Telefono;
 }

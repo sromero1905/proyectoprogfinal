@@ -16,7 +16,7 @@ Fecha::Fecha(int d, int m, int a) {
     anio = a;
 }
 
-// Cargar fecha desde teclado
+// Cargar fecha
 void Fecha::cargarFecha() {
     cout << "INGRESAR DIA: ";
     cin >> dia;

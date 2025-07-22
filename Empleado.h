@@ -16,6 +16,8 @@ class Empleado : public Persona {
 
     void actualizarEmpleado ();
 
+    void eliminarEmpleado ();
+
     //Getters
     int getIDEmpleado() ;
     const char* getEspecialidad();

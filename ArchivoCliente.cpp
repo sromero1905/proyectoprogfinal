@@ -158,7 +158,7 @@ void ArchivoCliente::ModificarCliente() {
     cliente.mostrarCliente();
 
     char confirma;
-    cout << "¿Desea modificar este cliente? (s/n): ";
+    cout << "Desea modificar este cliente? (s/n): ";
     cin >> confirma;
 
     if (confirma == 's' || confirma == 'S') {
